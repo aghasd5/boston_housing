@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11862,25 +11862,31 @@ C:\Program Files\Anaconda3_4.2\lib\site-packages\sklearn\learning_curve.py:22: D
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Correction#1</span>
+
+<span class="c1"># TODO: Minimum price of the data</span>
+<span class="c1">#minimum_price = prices.min()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span><span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="c1">#maximum_price =prices.max()</span>
+<span class="n">maximum_price</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># corrected mean using the numpy library</span>
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="c1">#Correction#1</span>
+
 <span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="c1">#median_price = prices.median()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="c1">#std_price = prices.std()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -11907,7 +11913,7 @@ Minimum price: $105000.0
 Maximum price: $1024800.0
 Mean price: $454342.9447852761
 Median price $438900.0
-Standard deviation of prices: $165340.27765266786
+Standard deviation of prices: $165171.13154429477
 </pre>
 </div>
 </div>
@@ -11943,7 +11949,7 @@ Standard deviation of prices: $165340.27765266786
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Correction#2</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Correction#</span>
 <span class="c1">#drawing a linear regression graph to visualize impacts for the variables (RM&#39;, &#39;LSTAT&#39;, and &#39;PTRATIO) on the Target Variable (MDEV)</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LinearRegression</span>
@@ -13363,6 +13369,9 @@ After visualizing the graph,</p>
 <p>1) The RM value does affect the price. So, house with RM of 6 will be cheaper than house of RM value 7.
 2) Yes, the neighborhood with an LSTAT value of 15 will have more price than that of 20.
 3) The house with PTRATIO of 10 will be expensive than that of 15.</p>
+<p><strong>Correction#2</strong>
+What does it mean to have a higher RM? Considering your life experience, would you expect it to make prices higher? Why?
+Yes, higher RM value does impact the price of house. Because it is considered as a feature in the house. Generally, the more rooms you have it means you have more square footage and that increases the price.</p>
 
 </div>
 </div>
@@ -15285,25 +15294,10 @@ Think about the pros and cons of adding more training points based on if the tra
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Correction#3</strong>
-<strong>What does refined means?
-When we add more training points to the training set, the curve shows more refined results and so is the testing curve.</strong>
-Answer: It meant that when more data is being provided to the model, the more accurate its predictions are.</p>
-<p><strong>
-What is better here? The train score is decreasing. You've said that both curves were improving.
-This means the data more data we have, better it is.</strong>
-Answer: Better means that the predictions are more accuarate and true.</p>
-<p><strong>
-generalized data set as if the data gets too specific we will be overfitting like in the graph with the max_depth of 10
-Biased data and not having many data points are different problems. Here we're talking about the number of training points solely.</strong>
-Answer: Sorry, I misunderstood that point. I would like to rephrase it as:
-The training curve gets low score because we dont have enough info on the training data due to max_depth of 3.
-And the testing curve soars at first and then stabilizes as more training points are introduced.</p>
-<p><strong>
-Again, we need to balance out the data as not providing sufficient data points like in the first graph with max_depth of 1, we might introduce underfitting.
-More data don't cause underfitting, small complexity does it.</strong>
-Answer:My answer was wrong due to misunderstanding of underfitting.This is my updated answer.
-No adding more training points wont increase the accuracy of the model.</p>
+<p><strong>Correction#3</strong></p>
+<p>1) I chose the model with the Max_depth, 6. Since it bests describes the perfect model for training and testing data.</p>
+<p>2) The score of the training curve gets more accurate as we feed more data to it and stabilizes between .8 and .9. Similarly, the testing score moves closer towards the training score initially but then descends a little and stabilizes between .7 and .8. Also they dont tend to converge even if we add more training points.</p>
+<p>3) More data points will not benefit the model. The training points tend to decrease a little and also testing score tends to decrease.</p>
 
 </div>
 </div>
@@ -16100,11 +16094,12 @@ zMzMzEqYkzUzMzOzEvb/t76Fr2S5diAAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Correction#4</strong>
-<strong>TAlk about the visual clues for your conclusions.</strong>
+<p><strong>TAlk about the visual clues for your conclusions.</strong>
 Based on the graph,</p>
 <p>when the model is trained with max_depth of 1; It suffers from high bias. Since it dont know much about the data due to max_Depth of 1.
 Similarly when model is trained with the max_depth of 10; It gives you most accurate/correct prediction but also suffers from High Variance as it tries to memorize the data.</p>
+<p><strong>Correction#4</strong>
+I believe that it underfits on max_depth of 1 because it dont know the data well enough and it overfits on max_depth of 10 as it tries to memorize the data and doesnt do well on the training set.</p>
 
 </div>
 </div>
@@ -16175,7 +16170,7 @@ Similarly when model is trained with the max_depth of 10; It gives you most accu
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Correction#5</strong>
+<p><strong>Correction</strong>
 Grid Search is used to calculate the best parameters to use for any given model. For example,we used maximum depth in Decision Tree Model.</p>
 <p>It optimizes the model using a user defined range for hyper-parameter. It evaluates that defined range on all the training sets and then uses metric technique (like R2 score) to get the best performance on the model thus optimizing the model.</p>
 
@@ -16207,7 +16202,7 @@ Grid Search is used to calculate the best parameters to use for any given model.
 <p><strong>Answer: </strong>
 1) It randomly splits the data into K amount of smaller data sets also known as folds.Then testing and evaluating the model on K folds selecting different fold to test and train every time. The output is the mean of all the K results.</p>
 <p>2) It benefits us to narrow down on the final selection of the hyperparameters.It provides us with an approximation in reference to the model with the best score. In this case, higher the score the better your model is trained.</p>
-<p><strong> Correction#6</strong></p>
+<p><strong> Correction</strong></p>
 <p>1) K- fold Technique divides the data into k number of folds (portions of data) of equal size. Then each fold is reserved for testing while other folds (k-1) are used as training. This approach is repeated till we have calculated error estimates for all the folds.</p>
 <p>2) It optimizes grid search by increasing the training sets and decreaing the high bias.
 We are using all the data we have in different combination so to utilize the training set completely.
@@ -16446,7 +16441,7 @@ Predicted selling price for Client 3&#39;s home: $933,975.00
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Correction#7</strong></p>
+<p><strong>Correction</strong></p>
 <h2 id="Answer:-"><strong>Answer: </strong><a class="anchor-link" href="#Answer:-">&#182;</a></h2><p>Statistics for Boston housing dataset:</p>
 <p>Minimum price: $105000.0
 Maximum price: $1024800.0
